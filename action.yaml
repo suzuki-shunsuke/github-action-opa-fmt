@@ -10,5 +10,5 @@ runs:
     - uses: suzuki-shunsuke/github-action-format@main
       with:
         github_token: ${{ inputs.github_token }}
-        command: git ls-files | grep -E "\.rego$" | xargs opa fmt -l -w
+        command: git ls-files | grep -E "\.rego$" | xargs opa fmt -l && git ls-files | grep -E "\.rego$" | xargs opa fmt -w
         commit_message: "style: opa fmt"
